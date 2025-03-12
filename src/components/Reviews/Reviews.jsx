@@ -3,9 +3,13 @@ export function Reviews({ reviews }) {
     <>
       <h3>Reviews</h3>
       <ul>
-        { reviews.map((review) => (
-          <li key={review.id}>{ review.text }</li>
-        )) }
+        { reviews.length ? reviews.map(({ id, user, rating, text }) => (
+           <li key={ id }>
+            <div>Name: { user }</div>
+            <div>Rating: { rating }</div>
+            <div>{ text }</div>
+          </li>
+        )) : null }
       </ul>
     </>
   )

@@ -1,8 +1,7 @@
 import { Menu } from "../Menu/Menu.jsx"
 import { Reviews } from "../Reviews/Reviews.jsx"
 
-export function Restaurant({ restaurant }) {
-  const { name, menu, reviews } = restaurant
+export function Restaurant({ restaurant: { name, menu, reviews }  }) {
   return (
     <>
         <h2>{ name }</h2>

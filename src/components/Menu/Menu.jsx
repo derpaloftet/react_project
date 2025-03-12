@@ -5,9 +5,9 @@ export function Menu({ menu }) {
     <>
       <h3>Menu</h3>
       <ul>
-        { menu.map((menu) => (
+        { menu.length ? menu.map((menu) => (
           <li key={ menu.id }><Dish menu={ menu } /></li>
-        )) }
+        )) : null }
       </ul>
     </>
   )
