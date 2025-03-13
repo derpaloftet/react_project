@@ -1,9 +1,9 @@
 import React from "react"
 
-export function TabButton({ restaurant: { name }, onClickHandler }) {
+export function TabButton({ text, onClickHandler }) {
   return (
     <button onClick={ onClickHandler }>
-      { name }
+      { text }
     </button>
   )
 }
