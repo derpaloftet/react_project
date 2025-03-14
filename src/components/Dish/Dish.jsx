@@ -1,4 +1,4 @@
-import { Counter } from "../Counter/Counter.jsx"
+import { DishCounter } from "./DishCounter.jsx"
 
 export function Dish({ menu: { name, price, ingredients } }) {
   return (
@@ -13,7 +13,7 @@ export function Dish({ menu: { name, price, ingredients } }) {
           </li>
         ) : null }
       </ul>
-      <Counter />
+      <DishCounter />
     </>
   )
 }

@@ -1,4 +1,4 @@
-export function Review({ user, rating, text }) {
+export function Review({ review: { user, rating, text } }) {
   return (
     <li>
       <div>Name: { user }</div>
