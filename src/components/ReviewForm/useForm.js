@@ -10,25 +10,24 @@ const DEFAULT_FORM_VALUE = {
   review: "",
   rating: 1
 }
+function reducer(state, { type, payload }) {
+  switch (type) {
+    case SET_NAME_ACTION:
+      return { ...state, name: payload }
+    case SET_REVIEW_ACTION:
+      return { ...state, review: payload }
+    case SET_INCREMENT_RATING_ACTION:
+      return { ...state, rating: state.rating + 1 }
+    case SET_DECREMENT_RATING_ACTION:
+      return { ...state, rating: state.rating - 1 }
+    case CLEAR_FORM_ACTION:
+      return DEFAULT_FORM_VALUE
+    default:
+      return state
+  }
+}
 
 export function useForm() {
-
-  function reducer(state, { type, payload }) {
-    switch (type) {
-      case SET_NAME_ACTION:
-        return { ...state, name: payload }
-      case SET_REVIEW_ACTION:
-        return { ...state, review: payload }
-      case SET_INCREMENT_RATING_ACTION:
-        return { ...state, rating: state.rating + 1 }
-      case SET_DECREMENT_RATING_ACTION:
-        return { ...state, rating: state.rating - 1 }
-      case CLEAR_FORM_ACTION:
-        return DEFAULT_FORM_VALUE
-      default:
-        return state
-    }
-  }
 
   const [form, dispatch] = useReducer(reducer, DEFAULT_FORM_VALUE)
   const { name, review, rating } = form

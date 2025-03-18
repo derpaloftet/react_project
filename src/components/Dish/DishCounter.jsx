@@ -5,11 +5,11 @@ export function DishCounter() {
   const { increment, decrement, count } = useCount()
   return (
     <div>
-      <Counter increment={increment}
-               decrement={decrement}
-               count={count}
-               minCounter = {0}
-               maxCounter = {5}
+      <Counter increment={ increment }
+               decrement={ decrement }
+               count={ count }
+               minCounter = { 0 }
+               maxCounter = { 5 }
       />
     </div>
   )
