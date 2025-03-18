@@ -3,7 +3,6 @@ import globals from "globals"
 import react from "eslint-plugin-react"
 import reactHooks from "eslint-plugin-react-hooks"
 import reactRefresh from "eslint-plugin-react-refresh"
-import stylisticJs from '@stylistic/eslint-plugin-js'
 
 export default [
   { ignores: ["dist"] },
@@ -22,11 +21,11 @@ export default [
       react,
       "react-hooks": reactHooks,
       "react-refresh": reactRefresh,
-      '@stylistic/js': stylisticJs
     },
     settings: { react: { version: "19.0" } },
     rules: {
-      '@stylistic/js/object-curly-spacing': ["error", "always"],
+      "object-curly-spacing": ["error", "always"],
+      "react/jsx-curly-spacing": ["error", { "when": "always", "children": true }],
       ...js.configs.recommended.rules,
       ...react.configs.recommended.rules,
       ...react.configs["jsx-runtime"].rules,
