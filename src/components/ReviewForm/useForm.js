@@ -10,6 +10,7 @@ const DEFAULT_FORM_VALUE = {
   review: "",
   rating: 1
 }
+
 function reducer(state, { type, payload }) {
   switch (type) {
     case SET_NAME_ACTION:
