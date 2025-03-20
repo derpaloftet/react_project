@@ -1,21 +1,17 @@
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useState } from "react"
 
-function handleScroll(lastScrollProgress, setScrollProgress) {
+function handleScroll(setScrollProgress) {
   const overallScrollHeight = document.documentElement.scrollHeight - window.innerHeight
   const currentScrollHeight = window.scrollY
   const currentScrollProgress = currentScrollHeight / overallScrollHeight * 100
-  if (currentScrollProgress !== lastScrollProgress.current) {
-    lastScrollProgress.current = currentScrollProgress
-    setScrollProgress(currentScrollProgress)
-  }
+  setScrollProgress(currentScrollProgress)
 }
 
 export function ProgressBar() {
   const [scrollProgress, setScrollProgress] = useState(0)
-  const lastScrollProgress = useRef(0)
   useEffect(() => {
     const scrollListener = () => {
-      handleScroll(lastScrollProgress, setScrollProgress)
+      handleScroll(setScrollProgress)
     }
     window.addEventListener("scroll", scrollListener)
     return () => window.removeEventListener("scroll", scrollListener)
