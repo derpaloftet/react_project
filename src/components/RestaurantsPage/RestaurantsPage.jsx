@@ -1,5 +1,5 @@
 import { restaurants } from "../../assets/mock.js"
-import { TabButton } from "../TabButton/TabButton.jsx"
+import { Tab } from "../Tab/Tab.jsx"
 import { Restaurant } from "../Restaurant/Restaurant.jsx"
 import { useState } from "react"
 
@@ -8,9 +8,10 @@ export function RestaurantsPage() {
   return (
     <>
       { restaurants.length ? restaurants.map((restaurant) => (
-          <TabButton
+          <Tab
             key={ restaurant.id }
             text={ restaurant.name }
+            isActive={ activeRestaurant.id === restaurant.id }
             onClickHandler={ () => setActiveRestaurant(restaurant) } />))
         : null }
       <Restaurant restaurant={ activeRestaurant } />
