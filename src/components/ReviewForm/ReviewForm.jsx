@@ -4,7 +4,9 @@ import { useForm } from "./useForm.js"
 export function ReviewForm({ restaurantName }) {
   const { name, review, rating, setName, setReview, increment, decrement, clearForm } = useForm(restaurantName)
   return (
-    <form onSubmit={ e => {e.preventDefault()} }>
+    <form onSubmit={ e => {
+      e.preventDefault()
+    } }>
       <h3>Leave your review for { restaurantName }</h3>
       <input type="text" value={ name } onChange={ (e) => setName(e.target.value) }
              placeholder="Enter your name" /><br />

@@ -14,6 +14,8 @@ export function RestaurantsPage() {
             onClickHandler={ () => setActiveRestaurant(restaurant) } />))
         : null }
       <Restaurant restaurant={ activeRestaurant } />
+      <Restaurant restaurant={ activeRestaurant } />
+      <Restaurant restaurant={ activeRestaurant } />
     </>
   )
 }
