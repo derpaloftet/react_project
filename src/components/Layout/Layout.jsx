@@ -6,7 +6,7 @@ import styles from "./Layout.module.css"
 
 export function Layout({ children }) {
   return (
-    <div className={ styles.appContainer }>
+    <div className={ styles.appLayout }>
       <ProgressBar />
       <Header />
       <section>{ children }</section>

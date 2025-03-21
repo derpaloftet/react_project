@@ -1,7 +1,17 @@
 import styles from "./Button.module.css"
+import classNames from "classnames"
 
-export function Button( { children, onClick, disabled } ) {
+export function Button({ children, onClick, disabled, className, colorViewVariant = "default" }) {
   return (
-    <button className={ styles.button } onClick={ onClick } disabled={ disabled }>{ children }</button>
+    <button
+      onClick={ onClick }
+      disabled={ disabled }
+      className={ classNames(styles.button, className, {
+        [styles.default]: colorViewVariant === "default",
+        [styles.active]: colorViewVariant === "active"
+      }) }
+    >
+      { children }
+    </button>
   )
 }
