@@ -8,8 +8,8 @@ export function Tab({ text, onClickHandler, isActive }) {
     <Button
       className={ styles.tab }
       onClick={ onClickHandler }
-      disabled = { isActive }
-      colorViewVariant= { isActive ? "active" : "default" }
+      disabled={ isActive }
+      colorViewVariant={ isActive ? "active" : "default" }
     >
       { text }
     </Button>

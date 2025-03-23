@@ -2,11 +2,15 @@
     padding: 0;
     font-size: 15px;
 }
-.default {
-    background-color: burlywood;
-    color: black;
-}
 .active {
     background-color: pink;
     color: black;
+}
+.light.default{
+    background-color: burlywood;
+    color: black;
+}
+.dark.default{
+    background-color: darkslategray;
+    color: lightgray;
 }
