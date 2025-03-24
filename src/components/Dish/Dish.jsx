@@ -1,6 +1,9 @@
 import { DishCounter } from "./DishCounter.jsx"
+import { use } from "react"
+import { UserContext } from "../User-context/index.js"
 
 export function Dish({ menu: { name, price, ingredients } }) {
+  const { currentUser } = use(UserContext)
   return (
     <>
       <h3>{ name }</h3>
@@ -13,7 +16,7 @@ export function Dish({ menu: { name, price, ingredients } }) {
           </li>
         ) : null }
       </ul>
-      <DishCounter />
+      { currentUser && <DishCounter /> }
     </>
   )
 }

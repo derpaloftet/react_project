@@ -3,7 +3,7 @@ import classNames from "classnames"
 import { ThemeContext } from "../Theme-context"
 import { use } from "react"
 
-export function Button({ children, onClick, disabled, className, colorViewVariant = "default", type }) {
+export function Button({ children, onClick, disabled, className, colorViewVariant = "default", type = "button" }) {
   const { theme } = use(ThemeContext)
   return (
     <button
