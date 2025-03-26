@@ -1,14 +1,16 @@
 import { Dish } from "../Dish/Dish.jsx"
 
+import styles from "./Menu.module.css"
+
 export function Menu({ menu }) {
   return (
-    <>
-      <h3>Menu</h3>
-      <ul>
+    <div className={ styles.root }>
+      <h3 className={ styles.menuHeader }>Menu</h3>
+      <ul className={ styles.menuList }>
         { menu.length ? menu.map((menu) => (
-          <li key={ menu.id }><Dish menu={ menu } /></li>
+          <li className={ styles.menuItem } key={ menu.id }><Dish menu={ menu } /></li>
         )) : null }
       </ul>
-    </>
+    </div>
   )
 }

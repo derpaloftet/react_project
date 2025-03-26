@@ -8,8 +8,8 @@ export function DishCounter() {
       <Counter increment={ increment }
                decrement={ decrement }
                count={ count }
-               minCounter = { 0 }
-               maxCounter = { 5 }
+               minCounter={ 0 }
+               maxCounter={ 5 }
       />
     </div>
   )

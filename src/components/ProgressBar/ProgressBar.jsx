@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react"
 
+import styles from "./ProgressBar.module.css"
+
 function handleScroll(setScrollProgress) {
   const overallScrollHeight = document.documentElement.scrollHeight - window.innerHeight
   const currentScrollHeight = window.scrollY
@@ -18,14 +20,9 @@ export function ProgressBar() {
   }, [])
 
   const progressContainer = {
-    position: "fixed",
-    top: 0,
-    left: 0,
-    height: "15px",
-    backgroundColor: "lightblue",
     width: `${ scrollProgress }%`
   }
   return (
-    <div style={ progressContainer }></div>
+    <div className={ styles.root } style={ progressContainer }></div>
   )
 }

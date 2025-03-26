@@ -7,7 +7,7 @@ export function LogInUser() {
   return (
     <Button
       onClick={ currentUser ? logOutUser : logInUser }>
-      { currentUser ? `${currentUser}, Log Out` : "Log In" }
+      { currentUser ? `${ currentUser }, Log Out` : "Log In" }
     </Button>
   )
 }

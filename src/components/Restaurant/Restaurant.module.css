@@ -1,0 +1,14 @@
+@import "../App/variables.module.css";
+
+.root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.name {
+    font-size: 2rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: var(--primary-blue);
+}

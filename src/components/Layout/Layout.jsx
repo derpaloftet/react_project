@@ -9,7 +9,7 @@ export function Layout({ children }) {
     <div className={ styles.appLayout }>
       <ProgressBar />
       <Header />
-      <section>{ children }</section>
+      <main className={ styles.main }>{ children }</main>
       <Footer />
     </div>
   )
