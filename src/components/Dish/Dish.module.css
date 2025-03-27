@@ -1,0 +1,40 @@
+@import "../App/variables.module.css";
+
+.name {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    color: var(--secondary-blue);
+    margin-bottom: 6px;
+}
+
+.dish {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 10px;
+    align-items: center;
+    min-height: 45px;
+}
+
+.ingredients {
+    list-style: none;
+    padding-left: 15px;
+}
+
+.ingredients li {
+    position: relative;
+    padding-left: 15px;
+    font-size: 1rem;
+    color: var(--secondary-blue);
+}
+
+.ingredients li::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-color: var(--primary-blue);
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: 5px;
+}
