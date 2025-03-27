@@ -11,7 +11,6 @@ export function RestaurantsPage() {
     <>
       <div className={ styles.tabs }>
         { restaurants.length ? restaurants.map((restaurant) => (
-
             <Tab
               key={ restaurant.id }
               text={ restaurant.name }
@@ -19,8 +18,6 @@ export function RestaurantsPage() {
               onClickHandler={ () => setActiveRestaurant(restaurant) } />))
           : null }
       </div>
-      <Restaurant restaurant={ activeRestaurant } />
-      <Restaurant restaurant={ activeRestaurant } />
       <Restaurant restaurant={ activeRestaurant } />
     </>
   )

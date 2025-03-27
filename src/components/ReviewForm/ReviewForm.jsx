@@ -10,7 +10,6 @@ export function ReviewForm({ restaurantName }) {
     <form className={ styles.form }
           onSubmit={ e => {
             e.preventDefault()
-            console.log("submitted")
           } }>
       <h3 className={ styles.header }>Leave your review for { restaurantName }</h3>
       <div className={ styles.reviewFields }>

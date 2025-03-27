@@ -25,3 +25,13 @@
     background-color: #475569;
     color: #64b5f6;
 }
+
+.buttonRound {
+    padding: .5rem;
+    width: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 1rem;
+}
