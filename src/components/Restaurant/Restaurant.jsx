@@ -6,13 +6,13 @@ import { use } from "react"
 
 import styles from "./Restaurant.module.css"
 
-export function Restaurant({ restaurant: { name, menu, reviews } }) {
+export function Restaurant({ name, menuIds, reviewsIds }) {
   const { currentUser } = use(UserContext)
   return (
     <div className={ styles.root }>
       <h2 className={ styles.name }>{ name }</h2>
-      <Menu menu={ menu } />
-      <Reviews reviews={ reviews } />
+      <Menu menuIds={ menuIds } />
+      <Reviews reviewsIds={ reviewsIds } />
       { currentUser && <ReviewForm restaurantName={ name } key={ name } /> }
     </div>
   )

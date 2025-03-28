@@ -3,9 +3,12 @@ import { RestaurantsPage } from "../RestaurantsPage/RestaurantsPage.jsx"
 import "./App.css"
 import { ThemeContext } from "../Theme-context/Theme-context.jsx"
 import { UserContext } from "../User-context/User-context.jsx"
+import { Provider } from "react-redux"
+import { store } from "../../redux/store.js"
 
 export function App() {
   return (
+    <Provider store={ store }>
     <ThemeContext>
       <UserContext>
         <Layout>
@@ -13,5 +16,6 @@ export function App() {
         </Layout>
       </UserContext>
     </ThemeContext>
+    </Provider>
   )
 }

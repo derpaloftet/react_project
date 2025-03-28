@@ -4,7 +4,7 @@ import { UserContext } from "../User-context/index.js"
 
 import styles from "./Dish.module.css"
 
-export function Dish({ menu: { name, price, ingredients } }) {
+export function Dish({ name, price, ingredients }) {
   const { currentUser } = use(UserContext)
   return (
     <div>
