@@ -1,10 +1,10 @@
-import { DishCounter } from "./DishCounter.jsx"
+import { DishCounter } from "../Dishes-counter/Dish-counter.jsx"
 import { use } from "react"
 import { UserContext } from "../User-context/index.js"
 
 import styles from "./Dish.module.css"
 
-export function Dish({ name, price, ingredients }) {
+export function Dish({ name, price, ingredients, id }) {
   const { currentUser } = use(UserContext)
   return (
     <div>
@@ -19,7 +19,7 @@ export function Dish({ name, price, ingredients }) {
             </li>
           ) : null }
         </ul>
-        { currentUser && <DishCounter /> }
+        { currentUser && <DishCounter id={ id } /> }
       </div>
     </div>
   )

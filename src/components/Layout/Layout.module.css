@@ -10,3 +10,7 @@
 .main {
     padding: 20px;
 }
+
+.aside {
+    align-self: center;
+}

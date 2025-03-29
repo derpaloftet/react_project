@@ -9,5 +9,5 @@ export function DishContainer({ id }) {
     return null
   }
   const { name, price, ingredients } = dish
-  return <Dish name={ name } price={ price } ingredients={ ingredients } />
+  return <Dish id={ id } name={ name } price={ price } ingredients={ ingredients } />
 }

@@ -9,13 +9,13 @@ import { store } from "../../redux/store.js"
 export function App() {
   return (
     <Provider store={ store }>
-    <ThemeContext>
-      <UserContext>
-        <Layout>
-          <RestaurantsPage />
-        </Layout>
-      </UserContext>
-    </ThemeContext>
+      <ThemeContext>
+        <UserContext>
+          <Layout>
+            <RestaurantsPage />
+          </Layout>
+        </UserContext>
+      </ThemeContext>
     </Provider>
   )
 }
