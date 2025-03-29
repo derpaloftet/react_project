@@ -1,24 +1,32 @@
-import { restaurants } from "../../assets/mock.js"
-import { Tab } from "../Tab/Tab.jsx"
-import { Restaurant } from "../Restaurant/Restaurant.jsx"
 import { useState } from "react"
+import { RestaurantContainer } from "../Restaurant/Restaurant-container.jsx"
+import { selectRestaurantIds } from "../../redux/entities/restaurant/slice.js"
+import { RestaurantTabContainer } from "../RestaurantTab-container/RestaurantTab-container.jsx"
+import { useSelector } from "react-redux"
 
 import styles from "./RestaurantsPage.module.css"
 
 export function RestaurantsPage() {
-  const [activeRestaurant, setActiveRestaurant] = useState(restaurants[0])
+  const restaurantsIds = useSelector((state) => selectRestaurantIds(state))
+  const [activeRestaurant, setActiveRestaurant] = useState(restaurantsIds[0])
+  const handleSetActiveRestaurantId = (id) => {
+    if (activeRestaurant === id) {
+      return
+    }
+    setActiveRestaurant(id)
+  }
   return (
     <>
       <div className={ styles.tabs }>
-        { restaurants.length ? restaurants.map((restaurant) => (
-            <Tab
-              key={ restaurant.id }
-              text={ restaurant.name }
-              isActive={ activeRestaurant.id === restaurant.id }
-              onClickHandler={ () => setActiveRestaurant(restaurant) } />))
+        { restaurantsIds.length ? restaurantsIds.map((id) => (
+            <RestaurantTabContainer
+              key={ id }
+              id={ id }
+              isActive={ activeRestaurant === id }
+              onClickHandler={ () => handleSetActiveRestaurantId(id) } />))
           : null }
       </div>
-      <Restaurant restaurant={ activeRestaurant } />
+      <RestaurantContainer key={ activeRestaurant } id={ activeRestaurant } />
     </>
   )
 }
