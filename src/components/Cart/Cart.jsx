@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux"
 import { selectCartItems } from "../../redux/entities/cart/slice.js"
-import { CartItem } from "../CartItem/CartItem.jsx"
+import { CartListItem } from "../CartListItem/CartListItem.jsx"
 
 import styles from "./Cart.module.css"
 
@@ -16,7 +16,7 @@ export function Cart() {
       <div className={ styles.cart }>Cart:</div>
       <ul className={ styles.items }>
         { items.map(({ id, amount }) => (
-          <CartItem key={ id } id={ id } amount={ amount } />
+          <CartListItem key={ id } id={ id } amount={ amount } />
         )) }
       </ul>
     </div>

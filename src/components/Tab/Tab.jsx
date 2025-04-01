@@ -3,15 +3,15 @@ import { Button } from "../Button/Button.jsx"
 
 import styles from "./Tab.module.css"
 
-export function Tab({ text, onClickHandler, isActive }) {
+export function Tab({ children, onClickHandler, isActive }) {
   return (
-    <Button
+    <button
       className={ styles.tab }
       onClick={ onClickHandler }
       disabled={ isActive }
-      colorViewVariant={ isActive ? "active" : "default" }
+      //colorViewVariant={ isActive ? "active" : "default" }
     >
-      { text }
-    </Button>
+      { children }
+    </button>
   )
 }
