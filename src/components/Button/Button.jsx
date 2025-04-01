@@ -20,7 +20,6 @@ export function Button({
       disabled={ disabled }
       className={ classNames(styles.button, className, {
         [styles.default]: colorViewVariant === "default",
-        [styles.active]: colorViewVariant === "active",
         [styles.light]: theme === "light",
         [styles.dark]: theme === "dark",
         [styles.buttonRound]: buttonForm === "round"

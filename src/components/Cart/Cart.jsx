@@ -8,7 +8,12 @@ export function Cart() {
   const items = useSelector(selectCartItems)
 
   if (!items.length) {
-    return null
+    return (
+      <div className={ styles.root }>
+        <div className={ styles.cart }>Cart:</div>
+        <div>You haven't added any items to your cart yet!</div>
+      </div>
+    )
   }
 
   return (

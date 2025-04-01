@@ -1,12 +1,12 @@
 import { ReviewContainer } from "../Review/Review-container.jsx"
-
-import styles from "./Reviews.module.css"
 import { useParams } from "react-router"
 import { useSelector } from "react-redux"
 import { selectRestaurantById } from "../../redux/entities/restaurant/slice.js"
 import { ReviewForm } from "../ReviewForm/ReviewForm.jsx"
 import { UserContext } from "../User-context/index.js"
 import { use } from "react"
+
+import styles from "./Reviews.module.css"
 
 export function Reviews() {
   const { restaurantId } = useParams()

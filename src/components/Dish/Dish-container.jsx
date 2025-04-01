@@ -1,17 +1,14 @@
 import { useSelector } from "react-redux"
 import { selectDishById } from "../../redux/entities/dish/slice.js"
-import { NavLink } from "react-router"
+import { TabLink } from "../TabLink/TabLink.jsx"
 
 export function DishContainer({ id }) {
   const dish = useSelector((state) => selectDishById(state, id))
 
-  if (!dish) {
-    return null
-  }
   const { name } = dish
   return (
     <>
-      <NavLink to={ `/dish/${ dish.id }` }>{ name }</NavLink>
+      <TabLink to={ `/dish/${ dish.id }` } name={ name }>{ name }</TabLink>
     </>
   )
 }
