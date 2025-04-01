@@ -32,5 +32,3 @@ export function RestaurantsPage() {
     </>
   )
 }
-
-//<RestaurantContainer key={ activeRestaurant } id={ activeRestaurant } />

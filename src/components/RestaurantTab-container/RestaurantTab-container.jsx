@@ -1,6 +1,5 @@
 import { useSelector } from "react-redux"
 import { selectRestaurantById } from "../../redux/entities/restaurant/slice.js"
-import { Tab } from "../Tab/Tab.jsx"
 import { NavLink } from "react-router"
 
 export function RestaurantTabContainer({ id, isActive, onClickHandler }) {

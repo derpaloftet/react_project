@@ -11,6 +11,7 @@ import { NotFound } from "../NotFound/NotFound.jsx"
 import RestaurantPage from "../../pages/RestaurantPage.jsx"
 import { Menu } from "../Menu/Menu.jsx"
 import { Reviews } from "../Reviews/Reviews.jsx"
+import { Dish } from "../Dish/Dish.jsx"
 
 export function App() {
   return (
@@ -22,12 +23,13 @@ export function App() {
               <Route path="/" element={ <Layout /> }>
                 <Route index element={ <HomePage /> } />
                 <Route path="/restaurants" element={ <RestaurantsPage /> }>
-                  <Route path=":restaurantId" element={ <RestaurantPage /> } >
+                  <Route path=":restaurantId" element={ <RestaurantPage /> }>
                     <Route index element={ <Navigate to="menu" replace /> } />
                     <Route path="menu" element={ <Menu /> } />
                     <Route path="reviews" element={ <Reviews /> } />
                   </Route>
                 </Route>
+                <Route path="dish/:dishId" element={ <Dish /> } />
               </Route>
               <Route path="*" element={ <NotFound /> } />
             </Routes>

@@ -6,7 +6,12 @@ import { selectRestaurantById } from "../../redux/entities/restaurant/slice.js"
 
 export function Menu() {
   const { restaurantId } = useParams()
+
   const { menu } = useSelector((state) => selectRestaurantById(state, restaurantId))
+
+  if (!restaurantId) {
+    return null
+  }
 
   return (
     <div className={ styles.root }>

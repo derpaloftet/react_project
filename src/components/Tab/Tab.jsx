@@ -1,5 +1,4 @@
 import React from "react"
-import { Button } from "../Button/Button.jsx"
 
 import styles from "./Tab.module.css"
 

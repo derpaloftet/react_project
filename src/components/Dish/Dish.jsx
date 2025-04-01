@@ -3,14 +3,28 @@ import { use } from "react"
 import { UserContext } from "../User-context/index.js"
 
 import styles from "./Dish.module.css"
+import { useParams } from "react-router"
+import { useSelector } from "react-redux"
+import { selectDishById } from "../../redux/entities/dish/slice.js"
 
-export function Dish({ name, price, ingredients, id }) {
+export function Dish() {
+
+  const { dishId } = useParams()
+
+  const dish = useSelector((state) => selectDishById(state, dishId))
+
+  if (!dish) {
+    return null
+  }
+  const { name, price, ingredients } = dish
+
+
   const { currentUser } = use(UserContext)
   return (
     <div>
       <h3 className={ styles.name }>{ name }</h3>
       <div className={ styles.dish }>
-        <div>Price: { price }</div>
+        <div>Price: { price }€</div>
         <div>Ingredients:</div>
         <ul className={ styles.ingredients }>
           { ingredients.length ? ingredients.map((ingredient) =>
@@ -19,7 +33,7 @@ export function Dish({ name, price, ingredients, id }) {
             </li>
           ) : null }
         </ul>
-        { currentUser && <DishCounter id={ id } /> }
+        { currentUser && <DishCounter id={ dishId } /> }
       </div>
     </div>
   )
