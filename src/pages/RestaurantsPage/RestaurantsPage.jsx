@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { selectRestaurantIds } from "../../redux/entities/restaurant/slice.js"
-import { RestaurantTabContainer } from "../RestaurantTab-container/RestaurantTab-container.jsx"
+import { RestaurantTabContainer } from "../../components/RestaurantTab-container/RestaurantTab-container.jsx"
 import { useSelector } from "react-redux"
 import { Outlet } from "react-router"
 

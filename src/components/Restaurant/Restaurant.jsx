@@ -8,8 +8,8 @@ export function Restaurant({ name }) {
     <div className={ styles.root }>
       <h2 className={ styles.name }>{ name }</h2>
       <div className={ styles.tabs }>
-        <TabLink to="./menu" name={ "Menu" } />
-        <TabLink to="./reviews" name={ "Reviews" } />
+        <TabLink to="./menu" >Menu</TabLink>
+        <TabLink to="./reviews">Reviews</TabLink>
       </div>
       <Outlet />
     </div>

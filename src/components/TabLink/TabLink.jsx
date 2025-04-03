@@ -5,7 +5,7 @@ import { ThemeContext } from "../Theme-context/index.js"
 
 import styles from "./TabLink.module.css"
 
-export function TabLink({ name, to }) {
+export function TabLink({ children, to }) {
 
   const { theme } = use(ThemeContext)
 
@@ -20,7 +20,7 @@ export function TabLink({ name, to }) {
         })
       }
     >
-      { name }
+      { children }
     </NavLink>
   )
 }

@@ -1,12 +1,10 @@
 import { DishContainer } from "../Dish/Dish-container.jsx"
-import { useParams } from "react-router"
 import { useSelector } from "react-redux"
 import { selectRestaurantById } from "../../redux/entities/restaurant/slice.js"
 
 import styles from "./Menu.module.css"
 
-export function Menu() {
-  const { restaurantId } = useParams()
+export function Menu({ restaurantId }) {
 
   const { menu } = useSelector((state) => selectRestaurantById(state, restaurantId))
 
