@@ -1,8 +1,8 @@
 import { useState } from "react"
-import { RestaurantContainer } from "../Restaurant/Restaurant-container.jsx"
 import { selectRestaurantIds } from "../../redux/entities/restaurant/slice.js"
-import { RestaurantTabContainer } from "../RestaurantTab-container/RestaurantTab-container.jsx"
+import { RestaurantTabContainer } from "../../components/RestaurantTab-container/RestaurantTab-container.jsx"
 import { useSelector } from "react-redux"
+import { Outlet } from "react-router"
 
 import styles from "./RestaurantsPage.module.css"
 
@@ -20,13 +20,15 @@ export function RestaurantsPage() {
       <div className={ styles.tabs }>
         { restaurantsIds.length ? restaurantsIds.map((id) => (
             <RestaurantTabContainer
-              key={ id }
               id={ id }
+              key={ id }
               isActive={ activeRestaurant === id }
-              onClickHandler={ () => handleSetActiveRestaurantId(id) } />))
+              onClickHandler={ () => handleSetActiveRestaurantId(id) }
+            />
+          ))
           : null }
       </div>
-      <RestaurantContainer key={ activeRestaurant } id={ activeRestaurant } />
+      <Outlet />
     </>
   )
 }

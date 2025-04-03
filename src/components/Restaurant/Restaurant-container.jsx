@@ -1,12 +1,13 @@
 import { useSelector } from "react-redux"
 import { selectRestaurantById } from "../../redux/entities/restaurant/slice.js"
 import { Restaurant } from "./Restaurant.jsx"
+import { NotFound } from "../NotFound/NotFound.jsx"
 
 export function RestaurantContainer({ id }) {
   const restaurant = useSelector((state) => selectRestaurantById(state, id))
 
   if (!restaurant) {
-    return null
+    return <NotFound />
   }
   const { name, menu, reviews } = restaurant
   return <Restaurant name={ name } menuIds={ menu } reviewsIds={ reviews } />

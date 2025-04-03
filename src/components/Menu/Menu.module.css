@@ -23,6 +23,7 @@
     align-items: flex-start;
     width: 100%;
     gap: 2rem;
+    margin-bottom: 15px;
 }
 
 .menuItem {

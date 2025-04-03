@@ -1,19 +1,17 @@
-import { Menu } from "../Menu/Menu.jsx"
-import { Reviews } from "../Reviews/Reviews.jsx"
-import { ReviewForm } from "../ReviewForm/ReviewForm.jsx"
-import { UserContext } from "../User-context/index.js"
-import { use } from "react"
+import { TabLink } from "../TabLink/TabLink.jsx"
+import { Outlet } from "react-router"
 
 import styles from "./Restaurant.module.css"
 
-export function Restaurant({ name, menuIds, reviewsIds }) {
-  const { currentUser } = use(UserContext)
+export function Restaurant({ name }) {
   return (
     <div className={ styles.root }>
       <h2 className={ styles.name }>{ name }</h2>
-      <Menu menuIds={ menuIds } />
-      <Reviews reviewsIds={ reviewsIds } />
-      { currentUser && <ReviewForm restaurantName={ name } key={ name } /> }
+      <div className={ styles.tabs }>
+        <TabLink to="./menu" >Menu</TabLink>
+        <TabLink to="./reviews">Reviews</TabLink>
+      </div>
+      <Outlet />
     </div>
   )
 }
