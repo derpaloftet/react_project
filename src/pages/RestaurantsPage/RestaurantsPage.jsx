@@ -1,13 +1,18 @@
 import { useState } from "react"
-import { selectRestaurantIds } from "../../redux/entities/restaurant/slice.js"
+import { selectRestaurantsId } from "../../redux/entities/restaurant/slice.js"
 import { RestaurantTabContainer } from "../../components/RestaurantTab-container/RestaurantTab-container.jsx"
 import { useSelector } from "react-redux"
 import { Outlet } from "react-router"
+import { getRestaurants } from "../../redux/entities/restaurant/get-restaurants.js"
+import { useRequest } from "../../redux/hooks/use-request.js"
 
 import styles from "./RestaurantsPage.module.css"
 
 export function RestaurantsPage() {
-  const restaurantsIds = useSelector((state) => selectRestaurantIds(state))
+  const requestStatus = useRequest(getRestaurants)
+
+  const restaurantsIds = useSelector(selectRestaurantsId)
+
   const [activeRestaurant, setActiveRestaurant] = useState(restaurantsIds[0])
   const handleSetActiveRestaurantId = (id) => {
     if (activeRestaurant === id) {
@@ -15,6 +20,15 @@ export function RestaurantsPage() {
     }
     setActiveRestaurant(id)
   }
+
+  if (requestStatus === "idle" || requestStatus === "pending") {
+    return "loading..."
+  }
+
+  if (requestStatus === "rejected") {
+    return "error"
+  }
+
   return (
     <>
       <div className={ styles.tabs }>
