@@ -12,6 +12,7 @@ import RestaurantPage from "../../pages/RestaurantPage.jsx"
 import { Reviews } from "../Reviews/Reviews.jsx"
 import { Dish } from "../Dish/Dish.jsx"
 import MenuPage from "../../pages/MenuPage.jsx"
+import { ReviewsPage } from "../../pages/ReviewsPage.jsx"
 
 export function App() {
   return (
@@ -26,7 +27,7 @@ export function App() {
                   <Route path=":restaurantId" element={ <RestaurantPage /> }>
                     <Route index element={ <Navigate to="menu" replace /> } />
                     <Route path="menu" element={ <MenuPage /> } />
-                    <Route path="reviews" element={ <Reviews /> } />
+                    <Route path="reviews" element={ <ReviewsPage /> } />
                   </Route>
                 </Route>
                 <Route path="dish/:dishId" element={ <Dish /> } />

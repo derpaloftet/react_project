@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux"
-import { selectRestaurantById } from "../../redux/entities/restaurant/slice.js"
+import { selectRestaurantById } from "../../redux/entities/restaurants/slice.js"
 import { Restaurant } from "./Restaurant.jsx"
 import { NotFound } from "../NotFound/NotFound.jsx"
 

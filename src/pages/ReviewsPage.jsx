@@ -1,13 +1,13 @@
 import { useParams } from "react-router"
-import { Menu } from "../components/Menu/Menu.jsx"
+import { Reviews } from "../components/Reviews/Reviews.jsx"
 import { useRequest } from "../redux/hooks/use-request.js"
-import { getDishesByRestaurantId } from "../redux/entities/dish/get-dishes.js"
 import { REQUEST_STATUS_IDLE, REQUEST_STATUS_PENDING, REQUEST_STATUS_REJECTED } from "../redux/constants.js"
+import { getReviewsByRestaurantId } from "../redux/entities/review/get-reviews.js"
 
-export default function MenuPage() {
+export function ReviewsPage() {
   const { restaurantId } = useParams()
 
-  const requestStatus = useRequest(getDishesByRestaurantId, restaurantId);
+  const requestStatus = useRequest(getReviewsByRestaurantId, restaurantId);
   if (requestStatus === REQUEST_STATUS_PENDING || requestStatus === REQUEST_STATUS_IDLE) {
     return "Loading...";
   }
@@ -17,6 +17,6 @@ export default function MenuPage() {
 
   return (
     <div>
-      <Menu restaurantId={ restaurantId } />
+      <Reviews restaurantId={ restaurantId } />
     </div>)
 }

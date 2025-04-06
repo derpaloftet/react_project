@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit"
-import { restaurantsSlice } from "./entities/restaurant/slice"
+import { restaurantsSlice } from "./entities/restaurants/slice"
 import { dishesSlice } from "./entities/dish/slice.js"
 import { reviewsSlice } from "./entities/review/slice.js"
 import { usersSlice } from "./entities/user/slice.js"
