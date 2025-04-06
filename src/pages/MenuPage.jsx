@@ -6,13 +6,16 @@ import { REQUEST_STATUS_IDLE, REQUEST_STATUS_PENDING, REQUEST_STATUS_REJECTED } 
 
 export default function MenuPage() {
   const { restaurantId } = useParams()
+  if (!restaurantId) {
+    return null
+  }
 
-  const requestStatus = useRequest(getDishesByRestaurantId, restaurantId);
+  const requestStatus = useRequest(getDishesByRestaurantId, restaurantId)
   if (requestStatus === REQUEST_STATUS_PENDING || requestStatus === REQUEST_STATUS_IDLE) {
-    return "Loading...";
+    return "Loading..."
   }
   if (requestStatus === REQUEST_STATUS_REJECTED) {
-    return "ERROR";
+    return "ERROR"
   }
 
   return (

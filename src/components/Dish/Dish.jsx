@@ -1,21 +1,18 @@
 import { DishCounter } from "../Dishes-counter/Dish-counter.jsx"
 import { use } from "react"
 import { UserContext } from "../User-context/index.js"
-import { useParams } from "react-router"
 import { useSelector } from "react-redux"
 import { selectDishById } from "../../redux/entities/dish/slice.js"
-import { NotFound } from "../NotFound/NotFound.jsx"
+import { NotFoundPage } from "../../pages/NotFoundPage/NotFoundPage.jsx"
 
 import styles from "./Dish.module.css"
 
-export function Dish() {
-
-  const { dishId } = useParams()
+export function Dish({ dishId }) {
 
   const dish = useSelector((state) => selectDishById(state, dishId))
 
   if (!dish) {
-    return <NotFound />
+    return <NotFoundPage />
   }
   const { name, price, ingredients } = dish
 

@@ -1,12 +1,10 @@
 import { DishContainer } from "../Dish/Dish-container.jsx"
 import { useSelector } from "react-redux"
-import styles from "./Menu.module.css"
 import { selectRestaurantById } from "../../redux/entities/restaurants/slice.js"
 
+import styles from "./Menu.module.css"
+
 export function Menu({ restaurantId }) {
-  if (!restaurantId) {
-    return null
-  }
   const { menu } = useSelector((state) => selectRestaurantById(state, restaurantId))
 
   return (

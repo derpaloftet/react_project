@@ -16,8 +16,8 @@ export const store = configureStore({
     [reviewsSlice.name]: reviewsSlice.reducer,
     [usersSlice.name]: usersSlice.reducer,
     [cartSlice.name]: cartSlice.reducer,
-    [requestSlice.name]: requestSlice.reducer,
+    [requestSlice.name]: requestSlice.reducer
   },
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(loggerMiddleware),
+    getDefaultMiddleware().concat(loggerMiddleware)
 })

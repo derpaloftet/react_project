@@ -1,8 +1,8 @@
 import { Link } from "react-router"
 
-import styles from "./NotFound.module.css"
+import styles from "./NotFoundPage.module.css"
 
-export function NotFound() {
+export function NotFoundPage() {
   return (
     <div className={ styles.root }>
       <h1 className={ styles.header }>Oops! Page Not Found 🧐</h1>

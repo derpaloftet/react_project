@@ -8,9 +8,8 @@ export const reviewsSlice = createSlice({
   initialState: entityAdapter.getInitialState(),
   extraReducers: (builder) =>
     builder.addCase(getReviewsByRestaurantId.fulfilled, (state, { payload }) => {
-      console.log("reviewsSlice payload", payload)
-      entityAdapter.setMany(state, payload);
-    }),
+      entityAdapter.setMany(state, payload)
+    })
 })
 const selectReviewsSlice = (state) => state.reviews
 

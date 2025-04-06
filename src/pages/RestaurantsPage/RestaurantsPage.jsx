@@ -5,10 +5,9 @@ import { selectRestaurantsId } from "../../redux/entities/restaurants/slice.js"
 import { RestaurantTabContainer } from "../../components/RestaurantTab-container/RestaurantTab-container.jsx"
 import { getRestaurants } from "../../redux/entities/restaurants/get-restaurants.js"
 import { useRequest } from "../../redux/hooks/use-request.js"
-import { REQUEST_STATUS_IDLE, REQUEST_STATUS_PENDING, REQUEST_STATUS_REJECTED } from "../../redux/constants.js"
+import { REQUEST_STATUS_PENDING, REQUEST_STATUS_REJECTED } from "../../redux/constants.js"
 
 import styles from "./RestaurantsPage.module.css"
-
 
 export function RestaurantsPage() {
   const requestStatus = useRequest(getRestaurants)
@@ -23,11 +22,11 @@ export function RestaurantsPage() {
     setActiveRestaurant(id)
   }
 
-  if (requestStatus === REQUEST_STATUS_IDLE || requestStatus === REQUEST_STATUS_PENDING) {
-    return "loading..."
+  if (requestStatus === REQUEST_STATUS_PENDING) {
+    return "Loading..."
   }
   if (requestStatus === REQUEST_STATUS_REJECTED) {
-    return "error"
+    return "ERROR"
   }
 
   return (

@@ -1,5 +1,4 @@
 import { ReviewContainer } from "../Review/Review-container.jsx"
-import { useParams } from "react-router"
 import { useSelector } from "react-redux"
 import { selectRestaurantById } from "../../redux/entities/restaurants/slice.js"
 import { ReviewForm } from "../ReviewForm/ReviewForm.jsx"
@@ -8,8 +7,7 @@ import { use } from "react"
 
 import styles from "./Reviews.module.css"
 
-export function Reviews() {
-  const { restaurantId } = useParams()
+export function Reviews({ restaurantId }) {
 
   const { reviews } = useSelector((state) => selectRestaurantById(state, restaurantId))
   const { currentUser } = use(UserContext)
