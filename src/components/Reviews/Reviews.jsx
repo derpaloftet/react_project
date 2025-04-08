@@ -1,15 +1,12 @@
-import { ReviewContainer } from "../Review/Review-container.jsx"
-import { useSelector } from "react-redux"
-import { selectRestaurantById } from "../../redux/entities/restaurants/slice.js"
 import { ReviewForm } from "../ReviewForm/ReviewForm.jsx"
 import { UserContext } from "../User-context/index.js"
 import { use } from "react"
 
 import styles from "./Reviews.module.css"
+import { Review } from "../Review/Review.jsx"
 
-export function Reviews({ restaurantId }) {
+export function Reviews({ reviews, users }) {
 
-  const { reviews } = useSelector((state) => selectRestaurantById(state, restaurantId))
   const { currentUser } = use(UserContext)
 
   return (
@@ -17,8 +14,9 @@ export function Reviews({ restaurantId }) {
       <div className={ styles.root }>
         <h3 className={ styles.reviewsHeader }>Reviews</h3>
         <ul className={ styles.reviewsList }>
-          { reviews.length ? reviews.map((review) =>
-            <ReviewContainer key={ review } id={ review } />
+          { reviews.length ? reviews.map(({ id, userId, rating, text }) => {
+            const user = users.find(user => user.id === userId)
+            return <Review key={ id } rating={ rating } text={ text } name={ user.name } />}
           ) : null }
         </ul>
       </div>
@@ -26,3 +24,4 @@ export function Reviews({ restaurantId }) {
     </>
   )
 }
+//name?

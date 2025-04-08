@@ -1,22 +1,20 @@
-import { RestaurantContainer } from "../components/Restaurant/Restaurant-container.jsx"
 import { useParams } from "react-router"
-import { useRequest } from "../redux/hooks/use-request.js"
-import { REQUEST_STATUS_PENDING, REQUEST_STATUS_REJECTED } from "../redux/constants.js"
-import { getRestaurantById } from "../redux/entities/restaurants/get-restaurant.js"
+import { useGetRestaurantByIdQuery } from "../redux/services/api.js"
+import { Restaurant } from "../components/Restaurant/Restaurant.jsx"
 
 export default function RestaurantPage() {
   const { restaurantId } = useParams()
+  const { name, isLoading, isError } = useGetRestaurantByIdQuery(restaurantId)
 
-  const requestStatus = useRequest(getRestaurantById, restaurantId)
-  if (requestStatus === REQUEST_STATUS_PENDING) {
+  if (isLoading) {
     return "Loading..."
   }
-  if (requestStatus === REQUEST_STATUS_REJECTED) {
+  if (isError) {
     return "ERROR"
   }
 
   return (
     <div>
-      <RestaurantContainer id={ restaurantId } />
+      <Restaurant name={ name } />
     </div>)
 }

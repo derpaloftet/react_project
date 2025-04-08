@@ -1,25 +1,27 @@
 import { useParams } from "react-router"
 import { Reviews } from "../components/Reviews/Reviews.jsx"
-import { useRequest } from "../redux/hooks/use-request.js"
-import { REQUEST_STATUS_PENDING, REQUEST_STATUS_REJECTED } from "../redux/constants.js"
-import { getReviewsByRestaurantId } from "../redux/entities/review/get-reviews.js"
-import { getUsers } from "../redux/entities/user/get-users.js"
+import { useGetReviewsByRestaurantIdQuery, useGetUsersQuery } from "../redux/services/api.js"
 
 export function ReviewsPage() {
   const { restaurantId } = useParams()
 
-  const requestReviewsStatus = useRequest(getReviewsByRestaurantId, restaurantId)
-  const requestUsersStatus = useRequest(getUsers)
+  const { data: reviews,  isFetching: isReviewsLoading,
+    isError: isReviewsError } = useGetReviewsByRestaurantIdQuery(restaurantId)
 
-  if (requestReviewsStatus === REQUEST_STATUS_PENDING || requestUsersStatus === REQUEST_STATUS_PENDING) {
+  const { data: users, isLoading: isUsersLoading, isError: isUsersError } = useGetUsersQuery()
+
+  const isLoading = isUsersLoading || isReviewsLoading
+  const isError = isUsersError || isReviewsError
+
+  if (isLoading) {
     return "Loading..."
   }
-  if (requestReviewsStatus === REQUEST_STATUS_REJECTED || requestUsersStatus === REQUEST_STATUS_REJECTED) {
+  if (isError) {
     return "ERROR"
   }
 
   return (
     <div>
-      <Reviews restaurantId={ restaurantId } />
+      <Reviews reviews={ reviews } users={ users }/>
     </div>)
 }
