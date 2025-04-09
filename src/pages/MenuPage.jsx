@@ -6,7 +6,6 @@ export default function MenuPage() {
   const { restaurantId } = useParams()
 
   const { data, isLoading, isError } = useGetDishesByRestaurantIdQuery(restaurantId)
-  console.log(data)
 
   if (!restaurantId) {
     return null

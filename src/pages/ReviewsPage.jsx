@@ -5,10 +5,12 @@ import { useGetReviewsByRestaurantIdQuery, useGetUsersQuery } from "../redux/ser
 export function ReviewsPage() {
   const { restaurantId } = useParams()
 
-  const { data: reviews,  isFetching: isReviewsLoading,
-    isError: isReviewsError } = useGetReviewsByRestaurantIdQuery(restaurantId)
+  const {
+    data: reviews, isFetching: isReviewsLoading,
+    isError: isReviewsError
+  } = useGetReviewsByRestaurantIdQuery(restaurantId)
 
-  const { data: users, isLoading: isUsersLoading, isError: isUsersError } = useGetUsersQuery()
+  const { isLoading: isUsersLoading, isError: isUsersError } = useGetUsersQuery()
 
   const isLoading = isUsersLoading || isReviewsLoading
   const isError = isUsersError || isReviewsError
@@ -22,6 +24,6 @@ export function ReviewsPage() {
 
   return (
     <div>
-      <Reviews reviews={ reviews } users={ users }/>
+      <Reviews reviews={ reviews } />
     </div>)
 }
