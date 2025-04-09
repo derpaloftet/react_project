@@ -1,25 +1,25 @@
 import { useParams } from "react-router"
 import { Menu } from "../components/Menu/Menu.jsx"
-import { useRequest } from "../redux/hooks/use-request.js"
-import { getDishesByRestaurantId } from "../redux/entities/dish/get-dishes.js"
-import { REQUEST_STATUS_IDLE, REQUEST_STATUS_PENDING, REQUEST_STATUS_REJECTED } from "../redux/constants.js"
+import { useGetDishesByRestaurantIdQuery } from "../redux/services/api.js"
 
 export default function MenuPage() {
   const { restaurantId } = useParams()
+
+  const { data, isLoading, isError } = useGetDishesByRestaurantIdQuery(restaurantId)
+
   if (!restaurantId) {
     return null
   }
 
-  const requestStatus = useRequest(getDishesByRestaurantId, restaurantId)
-  if (requestStatus === REQUEST_STATUS_PENDING || requestStatus === REQUEST_STATUS_IDLE) {
+  if (isLoading) {
     return "Loading..."
   }
-  if (requestStatus === REQUEST_STATUS_REJECTED) {
+  if (isError) {
     return "ERROR"
   }
 
   return (
     <div>
-      <Menu restaurantId={ restaurantId } />
+      <Menu restaurantId={ restaurantId } menu={ data } />
     </div>)
 }

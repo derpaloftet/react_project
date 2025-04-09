@@ -1,12 +1,6 @@
-import { useSelector } from "react-redux"
-import { selectUserById } from "../../redux/entities/user/slice.js"
-
 import styles from "./Review.module.css"
 
-export function Review({ userId, rating, text }) {
-
-  const user = useSelector((state) => selectUserById(state, userId))
-  const { name } = user
+export function Review({ rating, text, name }) {
 
   return (
     <li className={ styles.root }>
