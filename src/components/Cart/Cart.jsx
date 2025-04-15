@@ -11,7 +11,7 @@ export function Cart() {
     return (
       <div className={ styles.root }>
         <div className={ styles.cart }>Cart:</div>
-        <div>You haven't added any items to your cart yet!</div>
+        <div>You haven&#39;t added any items to your cart yet!</div>
       </div>
     )
   }
@@ -20,8 +20,8 @@ export function Cart() {
     <div className={ styles.root }>
       <div className={ styles.cart }>Cart:</div>
       <ul className={ styles.items }>
-        { items.map(({ id, amount }) => (
-          <CartListItem key={ id } id={ id } amount={ amount } />
+        { items.map((id) => (
+          <CartListItem key={ id } id={ id } />
         )) }
       </ul>
     </div>
