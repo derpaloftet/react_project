@@ -1,14 +1,28 @@
-import { useSelector } from "react-redux"
-import { selectRestaurantById } from "../../redux/entities/restaurants/slice.js"
 import { Restaurant } from "./Restaurant.jsx"
-import { NotFoundPage } from "../../pages/NotFoundPage/NotFoundPage.jsx"
+import { useAddReviewMutation, useGetRestaurantsQuery } from "../../redux/services/api.js"
 
 export function RestaurantContainer({ id }) {
-  const restaurant = useSelector((state) => selectRestaurantById(state, id))
+  const { data, isLoading } = useGetRestaurantsQuery(undefined, {
+    selectFromResult: (result) => ({
+      ...result,
+      data: result.data?.find(({ id: restaurantId }) => restaurantId === id)
+    })
+  })
 
-  if (!restaurant) {
-    return <NotFoundPage />
+  const { name } = data
+
+  const [addReview, { isLoading: isAddReviewLoading }] = useAddReviewMutation()
+
+  const handleSubmit = (review) => {
+    addReview({ restaurantId: id, review })
   }
-  const { name, menu, reviews } = restaurant
-  return <Restaurant name={ name } menuIds={ menu } reviewsIds={ reviews } />
+
+  if (isLoading) {
+    return "...loading"
+  }
+
+  return <Restaurant restaurantName={ name }
+                     onSubmit={ handleSubmit }
+                     isSubmitButtonDisabled={ isAddReviewLoading }
+  />
 }

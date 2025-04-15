@@ -1,20 +1,19 @@
 import { useParams } from "react-router"
 import { Dish } from "../components/Dish/Dish.jsx"
-import { useRequest } from "../redux/hooks/use-request.js"
-import { REQUEST_STATUS_PENDING, REQUEST_STATUS_REJECTED } from "../redux/constants.js"
-import { getDishById } from "../redux/entities/dish/get-dish.js"
+import { useGetDishByIdQuery } from "../redux/services/api.js"
 
 export function DishPage() {
 
   const { dishId } = useParams()
 
-  const requestStatus = useRequest(getDishById, dishId)
-  if (requestStatus === REQUEST_STATUS_PENDING) {
+  const { data, isLoading, isError } = useGetDishByIdQuery(dishId)
+
+  if (isLoading) {
     return "Loading..."
   }
-  if (requestStatus === REQUEST_STATUS_REJECTED) {
+  if (isError) {
     return "ERROR"
   }
 
-  return (<Dish dishId={ dishId } />)
+  return (<Dish dishId={ dishId } dish={ data } />)
 }

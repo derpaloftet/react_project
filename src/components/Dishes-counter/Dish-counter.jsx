@@ -2,7 +2,6 @@ import { Counter } from "../Counter/Counter.jsx"
 import { useCount } from "./useCount.js"
 
 export function DishCounter({ id }) {
-
   const { increment, decrement, count } = useCount(id)
   return (
     <div>
