@@ -1,10 +1,9 @@
-import { useParams } from "react-router"
-import { Reviews } from "../components/Reviews/Reviews.jsx"
-import { useGetReviewsByRestaurantIdQuery, useGetUsersQuery } from "../redux/services/api.js"
+"use client"
 
-export function ReviewsPage() {
-  const { restaurantId } = useParams()
+import { Reviews } from "../Reviews/Reviews.jsx"
+import { useGetReviewsByRestaurantIdQuery, useGetUsersQuery } from "../../redux/services/api.js"
 
+export function ReviewsPage({ restaurantId }) {
   const {
     data: reviews, isFetching: isReviewsLoading,
     isError: isReviewsError

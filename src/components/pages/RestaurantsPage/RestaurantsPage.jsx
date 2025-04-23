@@ -1,10 +1,11 @@
-import { Outlet } from "react-router"
-import { useGetRestaurantsQuery } from "../../redux/services/api.js"
+"use client"
+
+import { useGetRestaurantsQuery } from "../../../redux/services/api.js"
+import { TabLink } from "../../TabLink/TabLink.jsx"
 
 import styles from "./RestaurantsPage.module.css"
-import { TabLink } from "../../components/TabLink/TabLink.jsx"
 
-export function RestaurantsPage() {
+export function RestaurantsPage({ children }) {
 
   const { data, isLoading, isError } = useGetRestaurantsQuery()
 
@@ -19,11 +20,11 @@ export function RestaurantsPage() {
     <>
       <div className={ styles.tabs }>
         { data.length ? data.map(({ id, name }) => (
-            <TabLink key={ id } to={ id } name={ name }>{ name }</TabLink>
+            <TabLink key={ id } to={ `/restaurants/${id}` } name={ name }>{ name }</TabLink>
           ))
           : null }
       </div>
-      <Outlet />
+      { children }
     </>
   )
 }

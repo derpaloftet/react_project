@@ -1,3 +1,4 @@
+"use client";
 import { UserContext as UserProvider } from "./index.js"
 import { useState } from "react"
 

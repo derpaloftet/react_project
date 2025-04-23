@@ -1,24 +1,27 @@
+"use client";
 import { Layout } from "../Layout/Layout.jsx"
-import { RestaurantsPage } from "../../pages/RestaurantsPage/RestaurantsPage.jsx"
 import { ThemeContext } from "../Theme-context/Theme-context.jsx"
 import { UserContext } from "../User-context/User-context.jsx"
 import { Provider } from "react-redux"
 import { store } from "../../redux/store.js"
-import { BrowserRouter, Navigate, Route, Routes } from "react-router"
-import { HomePage } from "../../pages/HomePage/HomePage.jsx"
-import { NotFoundPage } from "../../pages/NotFoundPage/NotFoundPage.jsx"
-import RestaurantPage from "../../pages/RestaurantPage.jsx"
-import MenuPage from "../../pages/MenuPage.jsx"
-import { ReviewsPage } from "../../pages/ReviewsPage.jsx"
-import { DishPage } from "../../pages/DishPage.jsx"
 import "./App.css"
 
-export function App() {
+export function App({ children }) {
   return (
     <Provider store={ store }>
       <ThemeContext>
         <UserContext>
-          <BrowserRouter>
+          <Layout>{ children }</Layout>
+        </UserContext>
+      </ThemeContext>
+    </Provider>
+  )
+}
+
+export default App
+
+/*
+<BrowserRouter>
             <Routes>
               <Route path="/" element={ <Layout /> }>
                 <Route index element={ <HomePage /> } />
@@ -34,8 +37,4 @@ export function App() {
               <Route path="*" element={ <NotFoundPage /> } />
             </Routes>
           </BrowserRouter>
-        </UserContext>
-      </ThemeContext>
-    </Provider>
-  )
-}
+ */

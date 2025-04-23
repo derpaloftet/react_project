@@ -1,4 +1,4 @@
-@import "../../components/App/variables.module.css";
+@import "../../../app/global.css";
 
 .root {
     display: flex;

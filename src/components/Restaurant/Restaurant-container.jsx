@@ -1,3 +1,5 @@
+"use client"
+
 import { Restaurant } from "./Restaurant.jsx"
 import { useAddReviewMutation, useGetRestaurantsQuery } from "../../redux/services/api.js"
 
@@ -21,7 +23,8 @@ export function RestaurantContainer({ id }) {
     return "...loading"
   }
 
-  return <Restaurant restaurantName={ name }
+  return <Restaurant restaurantId={ id }
+                     restaurantName={ name }
                      onSubmit={ handleSubmit }
                      isSubmitButtonDisabled={ isAddReviewLoading }
   />

@@ -1,9 +1,9 @@
-import { useParams } from "react-router"
-import { Menu } from "../components/Menu/Menu.jsx"
-import { useGetDishesByRestaurantIdQuery } from "../redux/services/api.js"
+"use client"
 
-export default function MenuPage() {
-  const { restaurantId } = useParams()
+import { Menu } from "../Menu/Menu.jsx"
+import { useGetDishesByRestaurantIdQuery } from "../../redux/services/api.js"
+
+function MenuPage({ restaurantId }) {
 
   const { data, isLoading, isError } = useGetDishesByRestaurantIdQuery(restaurantId)
 
@@ -23,3 +23,5 @@ export default function MenuPage() {
       <Menu restaurantId={ restaurantId } menu={ data } />
     </div>)
 }
+
+export default MenuPage

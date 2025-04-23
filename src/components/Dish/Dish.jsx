@@ -1,7 +1,7 @@
 import { DishCounter } from "../Dishes-counter/Dish-counter.jsx"
 import { use } from "react"
 import { UserContext } from "../User-context/index.js"
-import { NotFoundPage } from "../../pages/NotFoundPage/NotFoundPage.jsx"
+import { NotFoundPage } from "../pages/NotFoundPage/NotFoundPage.jsx"
 
 import styles from "./Dish.module.css"
 
