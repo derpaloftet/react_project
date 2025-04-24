@@ -8,8 +8,11 @@
 
 .main {
     padding: 20px;
+    display: flex;
     align-self: center;
-    flex-grow: 1;
+    align-items: center;
+    flex-direction: column;
+    min-height: 70vh;
 }
 
 .aside {

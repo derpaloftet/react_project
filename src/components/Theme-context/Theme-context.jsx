@@ -1,4 +1,5 @@
-"use client";
+"use client"
+
 import { ThemeContext as ThemeProvider } from "./index.js"
 import { useState } from "react"
 

@@ -1,4 +1,5 @@
-"use client";
+"use client"
+
 import { Layout } from "../Layout/Layout.jsx"
 import { ThemeContext } from "../Theme-context/Theme-context.jsx"
 import { UserContext } from "../User-context/User-context.jsx"
@@ -19,22 +20,3 @@ export function App({ children }) {
 }
 
 export default App
-
-/*
-<BrowserRouter>
-            <Routes>
-              <Route path="/" element={ <Layout /> }>
-                <Route index element={ <HomePage /> } />
-                <Route path="/restaurants" element={ <RestaurantsPage /> }>
-                  <Route path=":restaurantId" element={ <RestaurantPage /> }>
-                    <Route index element={ <Navigate to="menu" replace /> } />
-                    <Route path="menu" element={ <MenuPage /> } />
-                    <Route path="reviews" element={ <ReviewsPage /> } />
-                  </Route>
-                </Route>
-                <Route path="dish/:dishId" element={ <DishPage /> } />
-              </Route>
-              <Route path="*" element={ <NotFoundPage /> } />
-            </Routes>
-          </BrowserRouter>
- */

@@ -1,7 +1,7 @@
 "use client"
 
 import { Restaurant } from "./Restaurant.jsx"
-import { useAddReviewMutation, useGetRestaurantsQuery } from "../../redux/services/api.js"
+import { useGetRestaurantsQuery } from "../../redux/services/api.js"
 
 export function RestaurantContainer({ id }) {
   const { data, isLoading } = useGetRestaurantsQuery(undefined, {
@@ -13,19 +13,11 @@ export function RestaurantContainer({ id }) {
 
   const { name } = data
 
-  const [addReview, { isLoading: isAddReviewLoading }] = useAddReviewMutation()
-
-  const handleSubmit = (review) => {
-    addReview({ restaurantId: id, review })
-  }
-
   if (isLoading) {
     return "...loading"
   }
 
   return <Restaurant restaurantId={ id }
                      restaurantName={ name }
-                     onSubmit={ handleSubmit }
-                     isSubmitButtonDisabled={ isAddReviewLoading }
   />
 }

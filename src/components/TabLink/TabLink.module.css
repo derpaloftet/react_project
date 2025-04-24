@@ -16,7 +16,7 @@
 
 .light {
     background-color: #e3f2fd;
-    color: var(--primary-blue);
+    color: #1565c0;
 }
 
 .dark {
@@ -25,6 +25,6 @@
 }
 
 .isActive {
-    background-color: var(--primary-blue);
+    background-color: #1565c0;
     color: #fff;
 }

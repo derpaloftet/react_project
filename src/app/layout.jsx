@@ -1,4 +1,3 @@
-import "./global.css"
 import { App } from "../components/App/App.jsx"
 
 export const metadata = {

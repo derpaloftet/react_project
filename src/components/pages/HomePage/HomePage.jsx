@@ -1,7 +1,8 @@
-"use client";
+"use client"
+
+import Link from "next/link.js"
 
 import styles from "./HomePage.module.css"
-import Link from "next/link.js"
 
 export function HomePage() {
   return (
