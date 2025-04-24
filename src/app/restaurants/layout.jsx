@@ -1,3 +1,3 @@
-import { RestaurantsPage } from "../../components/pages/RestaurantsPage/RestaurantsPage.jsx"
+import { RestaurantsLayout } from "../../components/layouts/RestaurantsLayout/./RestaurantsLayout.jsx"
 
-export default RestaurantsPage
+export default RestaurantsLayout

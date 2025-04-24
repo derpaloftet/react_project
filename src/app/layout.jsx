@@ -16,7 +16,7 @@ export function RootLayout({ children }) {
         rel="stylesheet" />
     </head>
     <body>
-    <App id="root">{ children }</App>
+    <App>{ children }</App>
     </body>
     </html>
   )

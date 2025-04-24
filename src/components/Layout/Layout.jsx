@@ -1,5 +1,3 @@
-"use client"
-
 import { Header } from "../Header/Header.jsx"
 import { Footer } from "../Footer/Footer.jsx"
 import { ProgressBar } from "../ProgressBar/ProgressBar.jsx"

@@ -5,4 +5,5 @@ async function RestaurantReviewsPage({ params }) {
 
   return <ReviewsPage restaurantId={ restaurantId } />
 }
+
 export default RestaurantReviewsPage
