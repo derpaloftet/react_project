@@ -1,3 +1,5 @@
+"use client"
+
 import { useReducer } from "react"
 
 const SET_NAME_ACTION = "SET_NAME_ACTION"

@@ -1,18 +1,21 @@
 import React, { use } from "react"
-import { NavLink } from "react-router"
 import classNames from "classnames"
 import { ThemeContext } from "../Theme-context/index.js"
+import Link from "next/link.js"
+import { usePathname } from "next/navigation.js"
 
 import styles from "./TabLink.module.css"
 
 export function TabLink({ children, to }) {
 
+  const pathname = usePathname()
   const { theme } = use(ThemeContext)
+  const isActive = pathname === to
 
   return (
-    <NavLink
-      to={ to }
-      className={ ({ isActive }) =>
+    <Link
+      href={ to }
+      className={
         classNames(styles.root, {
           [styles.isActive]: isActive,
           [styles.light]: theme === "light",
@@ -21,6 +24,6 @@ export function TabLink({ children, to }) {
       }
     >
       { children }
-    </NavLink>
+    </Link>
   )
 }

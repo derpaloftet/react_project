@@ -1,4 +1,6 @@
-import { Link } from "react-router"
+"use client"
+
+import Link from "next/link.js"
 
 import styles from "./HomePage.module.css"
 
@@ -7,7 +9,7 @@ export function HomePage() {
     <div className={ styles.root }>
       <h1 className={ styles.header }>Welcome to the Food Delivery App</h1>
       <div className={ styles.message }>
-        Check out our restaurants <Link to="/restaurants">here</Link>
+        Check out our restaurants <Link href="/restaurants">here</Link>
       </div>
     </div>
   )

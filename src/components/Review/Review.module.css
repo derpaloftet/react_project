@@ -1,5 +1,3 @@
-@import "../App/variables.module.css";
-
 .root {
     margin-bottom: 10px;
     border-top: 2px solid grey;
@@ -10,11 +8,11 @@
 }
 
 .user {
-    color: var(--moderate-blue);
+    color: #0357b5;
 }
 
 .rating {
-    color: var(--moderate-blue);
+    color: #0357b5;
 }
 
 .reviewText {

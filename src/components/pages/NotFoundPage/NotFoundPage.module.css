@@ -10,7 +10,7 @@
 
 .header {
     font-size: 2rem;
-    color: var(--secondary-blue);
+    color: #1e3a8a;
     font-weight: bold;
 }
 
@@ -19,6 +19,6 @@
     flex-direction: column;
     gap: 20px;
     font-size: 1.2rem;
-    color: var(--moderate-blue);
+    color: #0357b5;
     font-weight: bold;
 }
