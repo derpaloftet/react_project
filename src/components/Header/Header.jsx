@@ -1,3 +1,5 @@
+"use client"
+
 import { ToggleTheme } from "../Toggle-theme/Toggle-theme.jsx"
 import { LogInUser } from "../LogInUser/LogInUser.jsx"
 

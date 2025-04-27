@@ -1,21 +1,18 @@
-"use client"
-
 import { Layout } from "../Layout/Layout.jsx"
 import { ThemeContext } from "../Theme-context/Theme-context.jsx"
 import { UserContext } from "../User-context/User-context.jsx"
-import { Provider } from "react-redux"
-import { store } from "../../redux/store.js"
 import "./App.css"
+import { ReduxProvider } from "../../redux/provider.js"
 
 export function App({ children }) {
   return (
-    <Provider store={ store }>
+    <ReduxProvider>
       <ThemeContext>
         <UserContext>
           <Layout>{ children }</Layout>
         </UserContext>
       </ThemeContext>
-    </Provider>
+    </ReduxProvider>
   )
 }
 

@@ -1,26 +1,13 @@
-"use client"
+import MenuContainer from "../Menu/MenuContainer.js"
+import { Suspense } from "react"
 
-import { Menu } from "../Menu/Menu.jsx"
-import { useGetDishesByRestaurantIdQuery } from "../../redux/services/api.js"
-
-function MenuPage({ restaurantId }) {
-
-  const { data, isLoading, isError } = useGetDishesByRestaurantIdQuery(restaurantId)
-
-  if (!restaurantId) {
-    return null
-  }
-
-  if (isLoading) {
-    return "Loading..."
-  }
-  if (isError) {
-    return "ERROR"
-  }
+async function MenuPage({ restaurantId }) {
 
   return (
     <div>
-      <Menu restaurantId={ restaurantId } menu={ data } />
+      <Suspense fallback='loading...'>
+        <MenuContainer restaurantId={ restaurantId } />
+      </Suspense>
     </div>)
 }
 

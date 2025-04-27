@@ -1,3 +1,5 @@
+"use client"
+
 import React, { use } from "react"
 import classNames from "classnames"
 import { ThemeContext } from "../Theme-context/index.js"

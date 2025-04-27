@@ -1,3 +1,5 @@
+"use client"
+
 import { DishCounter } from "../Dishes-counter/Dish-counter.jsx"
 import { use } from "react"
 import { UserContext } from "../User-context/index.js"
