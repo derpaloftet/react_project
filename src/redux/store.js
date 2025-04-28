@@ -3,6 +3,6 @@ import { cartSlice } from "./entities/cart/slice.js"
 
 export const store = configureStore({
   reducer: {
-    [cartSlice.name]: cartSlice.reducer,
+    [cartSlice.name]: cartSlice.reducer
   }
 })

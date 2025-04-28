@@ -23,7 +23,7 @@ export function Dish({ dishId, dish }) {
         <div>Price: { price }€</div>
         <div>Ingredients:</div>
         <ul className={ styles.ingredients }>
-          { ingredients.length ? ingredients.map(( ingredient ) =>
+          { ingredients.length ? ingredients.map((ingredient) =>
             <li key={ ingredient }>
               { ingredient }
             </li>

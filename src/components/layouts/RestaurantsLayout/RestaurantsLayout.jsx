@@ -4,7 +4,7 @@ import RestaurantsContainer from "../../Restaurants/RestaurantsContainer.js"
 export async function RestaurantsLayout({ children }) {
 
   return (
-    <Suspense fallback='...loading'>
+    <Suspense fallback="loading...">
       <RestaurantsContainer />
       { children }
     </Suspense>

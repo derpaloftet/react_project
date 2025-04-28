@@ -6,8 +6,8 @@ import { selectCartItems } from "../../redux/entities/cart/slice.js"
 import styles from "./Cart.module.css"
 import { CartListItem } from "../CartListItem/CartListItem.jsx"
 
-function getDishNamById( dishes, dishId ) {
-  let dish = dishes.find(dish => dish.id === dishId )
+function getDishNamById(dishes, dishId) {
+  let dish = dishes.find(dish => dish.id === dishId)
   if (!dish) {
     return null
   }
@@ -31,7 +31,7 @@ export function Cart({ dishes }) {
       <div className={ styles.cart }>Cart:</div>
       <ul className={ styles.items }>
         { items.map((id) => (
-          <CartListItem key={ id } dishId={ id } dishName ={ getDishNamById(dishes, id) } />
+          <CartListItem key={ id } dishId={ id } dishName={ getDishNamById(dishes, id) } />
         )) }
       </ul>
     </div>

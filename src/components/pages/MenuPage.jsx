@@ -5,7 +5,7 @@ async function MenuPage({ restaurantId }) {
 
   return (
     <div>
-      <Suspense fallback='loading...'>
+      <Suspense fallback="loading...">
         <MenuContainer restaurantId={ restaurantId } />
       </Suspense>
     </div>)

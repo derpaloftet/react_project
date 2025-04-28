@@ -3,7 +3,7 @@ export const getReviewsByRestaurantId = async (restaurantId) => {
     {
       next: {
         revalidate: 3600,
-        tags: ["getReviewsByRestaurantId"],
+        tags: ["getReviewsByRestaurantId"]
       }
     })
   return result.json()

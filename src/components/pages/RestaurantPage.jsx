@@ -4,9 +4,9 @@ import { Suspense } from "react"
 export async function RestaurantPage({ children, params }) {
   const { restaurantId } = await params
   return (
-      <Suspense fallback="...loading">
-        <RestaurantContainer id={ restaurantId } />
-        { children }
-      </Suspense>
-    )
+    <Suspense fallback="...loading">
+      <RestaurantContainer id={ restaurantId } />
+      { children }
+    </Suspense>
+  )
 }

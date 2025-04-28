@@ -32,11 +32,13 @@
     padding: 5px 10px;
 
 }
+
 .rating {
     display: flex;
     align-items: center;
     gap: .3rem;
 }
+
 .button {
     font-weight: bold;
     border: none;
@@ -50,11 +52,13 @@
     font-size: 1rem;
 
 }
+
 .buttonInput::-webkit-outer-spin-button,
 .buttonInput::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
+
 .buttonInput {
     background-color: #cfd8dc;
     border: none;

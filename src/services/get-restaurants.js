@@ -2,9 +2,9 @@ export const getRestaurants = async () => {
   const result = await fetch("http://localhost:3001/api/restaurants", {
     next: {
       revalidate: 3600,
-      tags: ["getRestaurants"],
-    },
-  });
+      tags: ["getRestaurants"]
+    }
+  })
 
-  return result.json();
-};
+  return result.json()
+}
