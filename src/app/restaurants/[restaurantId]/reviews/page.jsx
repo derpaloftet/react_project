@@ -1,9 +1,9 @@
-import { ReviewsPage } from "../../../../components/pages/ReviewsPage.jsx"
+import ReviewsContainer from "../../../../components/Reviews/ReviewsContainer.js"
 
 async function RestaurantReviewsPage({ params }) {
   const { restaurantId } = await params
 
-  return <ReviewsPage restaurantId={ restaurantId } />
+  return <ReviewsContainer restaurantId={ restaurantId } />
 }
 
 export default RestaurantReviewsPage
