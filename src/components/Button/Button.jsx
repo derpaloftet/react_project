@@ -10,7 +10,8 @@ export function Button({
                          className,
                          colorViewVariant = "default",
                          type = "button",
-                         buttonForm
+                         buttonForm,
+                         formAction
                        }) {
   const { theme } = use(ThemeContext)
   return (
@@ -18,6 +19,7 @@ export function Button({
       type={ type }
       onClick={ onClick }
       disabled={ disabled }
+      formAction = { formAction }
       className={ classNames(styles.button, className, {
         [styles.default]: colorViewVariant === "default",
         [styles.light]: theme === "light",
