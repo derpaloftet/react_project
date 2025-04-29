@@ -12,6 +12,6 @@ export default async function ReviewsContainer({ restaurantId }) {
   }
 
   return (<UsersContextProvider users={ users }>
-      <ReviewsPage restaurantId={ restaurantId } reviews={ reviews } />
-    </UsersContextProvider>)
+    <ReviewsPage restaurantId={ restaurantId } reviews={ reviews } />
+  </UsersContextProvider>)
 }
