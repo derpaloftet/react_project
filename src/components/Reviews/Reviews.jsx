@@ -1,6 +1,5 @@
-import { ReviewContainer } from "../Review/Review-container.jsx"
-
 import styles from "./Reviews.module.css"
+import { Review } from "../Review/Review.jsx"
 
 export function Reviews({ reviews }) {
 
@@ -10,7 +9,8 @@ export function Reviews({ reviews }) {
         <h3 className={ styles.reviewsHeader }>Reviews</h3>
         <ul className={ styles.reviewsList }>
           { reviews.length ? reviews.map(({ id, userId, rating, text }) => {
-            return <ReviewContainer key={ id } rating={ rating } text={ text } id={ userId } />}
+              return <Review key={ id } rating={ rating } text={ text } userId={ userId } />
+            }
           ) : null }
         </ul>
       </div>

@@ -1,7 +1,7 @@
 "use client"
 
-import styles from "./NotFoundPage.module.css"
 import Link from "next/link.js"
+import styles from "./NotFoundPage.module.css"
 
 export function NotFoundPage() {
   return (

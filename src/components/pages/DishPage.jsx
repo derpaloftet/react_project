@@ -1,18 +1,8 @@
-"use client"
-
-import { Dish } from "../Dish/Dish.jsx"
-import { useGetDishByIdQuery } from "../../redux/services/api.js"
+import DishContainer from "../Dish/DishContainer.js"
+import { Suspense } from "react"
 
 export function DishPage({ dishId }) {
-
-  const { data, isLoading, isError } = useGetDishByIdQuery(dishId)
-
-  if (isLoading) {
-    return "Loading..."
-  }
-  if (isError) {
-    return "ERROR"
-  }
-
-  return (<Dish dishId={ dishId } dish={ data } />)
+  return <Suspense fallback="loading...">
+    <DishContainer dishId={ dishId } />
+  </Suspense>
 }

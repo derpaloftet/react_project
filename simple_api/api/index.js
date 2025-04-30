@@ -4,11 +4,12 @@ const { restaurants, products, reviews, users } = require("./mock");
 const { reply, getById, updateById } = require("./utils");
 
 router.get("/restaurants", (req, res, next) => {
-  console.log("request");
+  console.log(`restaurants request: ${ req.url }`);
   reply(res, restaurants);
 });
 
 router.get("/restaurant/:restaurantId", (req, res, next) => {
+  console.log(`restaurant request: ${ req.url }`);
   const restaurantId = req.params?.restaurantId;
   let restaurant;
 

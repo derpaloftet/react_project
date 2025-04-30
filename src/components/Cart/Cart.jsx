@@ -1,10 +1,20 @@
+"use client"
+
 import { useSelector } from "react-redux"
 import { selectCartItems } from "../../redux/entities/cart/slice.js"
-import { CartListItem } from "../CartListItem/CartListItem.jsx"
 
 import styles from "./Cart.module.css"
+import { CartListItem } from "../CartListItem/CartListItem.jsx"
 
-export function Cart() {
+function getDishNameById(dishes, dishId) {
+  const dish = dishes.find(dish => dish.id === dishId)
+  if (!dish) {
+    return null
+  }
+  return dish.name
+}
+
+export function Cart({ dishes }) {
   const items = useSelector(selectCartItems)
 
   if (!items.length) {
@@ -21,7 +31,7 @@ export function Cart() {
       <div className={ styles.cart }>Cart:</div>
       <ul className={ styles.items }>
         { items.map((id) => (
-          <CartListItem key={ id } id={ id } />
+          <CartListItem key={ id } dishId={ id } dishName={ getDishNameById(dishes, id) } />
         )) }
       </ul>
     </div>
