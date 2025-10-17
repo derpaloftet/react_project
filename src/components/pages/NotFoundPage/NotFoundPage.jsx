@@ -1,5 +1,3 @@
-"use client"
-
 import Link from "next/link.js"
 import styles from "./NotFoundPage.module.css"
 
