@@ -6,7 +6,7 @@ import styles from "./ReviewForm.module.css"
 export function ReviewForm({ onSubmit }) {
   const ratingRef = useRef()
 
-  const [formState, submitAction, isPending] = useActionState(
+  const [formState, submitAction] = useActionState(
     onSubmit,
     {
       text: "Enter your review here!",
