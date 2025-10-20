@@ -1,21 +1,21 @@
 # API
 
-## Ресторан
+## Restaurant APIs
 
-1. GET /api/restaurants/ - все рестораны;
-2. GET /api/restaurant/:restaurantId - ресторан по айдишки (/api/restaurant/d32n32d8huasj );
+1. GET /api/restaurants/ - get all restaurants;
+2. GET /api/restaurant/:restaurantId - get a restaurant by id (/api/restaurant/d32n32d8huasj);
 
-## Блюда
+## Dishes APIs
 
-1. GET /api/dishes?restaurantId=:restaurantId - получить блюда по айди ресторана (/api/dishes?restaurantId=d32n32d8huasj)
-2. GET /api/dish/:dishId - блюдо по айдишки (/api/dish/djshfusdhfi29 )
+1. GET /api/dishes?restaurantId=:restaurantId - get dishes by restaurantId (/api/dishes?restaurantId=d32n32d8huasj)
+2. GET /api/dish/:dishId - get a dish by id (/api/dish/djshfusdhfi29)
 
-## Отзывы
+## Reviews APIs
 
-1. GET /api/reviews?restaurantId=:restaurantId - получить отзывы по айди ресторана (/api/reviews?restaurantId=d32n32d8huasj)
-2. POST /api/review/:restaurantId - создать отзыв по айди ресторана (/api/review/d32n32d8huasj, а в бади сам отзыв без айдишки)
-3. PATCH /api/review/:reviewId - изменить отзыв по айди ресторана (/api/review/d32n32d8huasj, а в бади сам отзыв без айдишки)
+1. GET /api/reviews?restaurantId=:restaurantId - get reviews by restaurantId (/api/reviews?restaurantId=d32n32d8huasj)
+2. POST /api/review/:restaurantId - create a review by restaurantId (/api/review/d32n32d8huasj, and the review itself is in the request body)
+3. PATCH /api/review/:reviewId - change a review by restaurantId (/api/review/d32n32d8huasj, and the review itself is in the request body)
 
-## Пользователи
+## Users APIs
 
-1. GET /api/users/ - все пользователи;
+1. GET /api/users/ - get all users;
