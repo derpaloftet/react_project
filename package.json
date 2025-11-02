@@ -9,7 +9,9 @@
     "lint": "eslint .",
     "lint-fix": "eslint . --fix",
     "start": "next start",
-    "start-server": "node simple_api/server.js"
+    "start-server": "node simple_api/server.js",
+    "lhci": "lhci autorun",
+    "wait": "wait-on http-get://127.0.0.1:3000 --timeout 60000"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.6.1",
@@ -21,12 +23,14 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",
+    "@lhci/cli": "^0.15.1",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
     "eslint": "^9.21.0",
     "eslint-plugin-react": "^7.37.4",
     "eslint-plugin-react-hooks": "^5.1.0",
     "eslint-plugin-react-refresh": "^0.4.19",
-    "globals": "^15.15.0"
+    "globals": "^15.15.0",
+    "wait-on": "^9.0.1"
   }
 }
