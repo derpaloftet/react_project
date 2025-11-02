@@ -20,7 +20,8 @@ jobs:
       - run:
           command: npm run build
       - run:
-          command: npm run start &
+          command: npm run start
+          background: true
       - run:
           command: npm run wait
       - browser-tools/install_chrome:

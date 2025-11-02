@@ -11,7 +11,7 @@
     "start": "next start",
     "start-server": "node simple_api/server.js",
     "lhci": "lhci autorun",
-    "wait": "wait-on http://127.0.0.1:3000"
+    "wait": "wait-on http-get://127.0.0.1:3000 --timeout 60000"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.6.1",
