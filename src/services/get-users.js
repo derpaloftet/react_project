@@ -1,5 +1,7 @@
+import { apiDomain } from "../config.js"
+
 export const getUsers = async () => {
-  const result = await fetch(`http://localhost:3001/api/users`, {
+  const result = await fetch(`${apiDomain}/api/users`, {
     next: {
       revalidate: 3600
     }
