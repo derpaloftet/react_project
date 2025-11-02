@@ -1,5 +1,7 @@
+import { apiDomain } from "../config.js"
+
 export const getReviewsByRestaurantId = async (restaurantId) => {
-  const result = await fetch(`http://localhost:3001/api/reviews?restaurantId=${ restaurantId }`,
+  const result = await fetch(`${apiDomain}/api/reviews?restaurantId=${ restaurantId }`,
     {
       next: {
         revalidate: 3600,
