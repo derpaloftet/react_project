@@ -22,7 +22,7 @@ jobs:
       - run:
           command: npm run start &
       - run:
-          command: npx wait-on http://127.0.0.1:3000
+          command: npm run wait
       - browser-tools/install_chrome:
           timeout: 2m
       - run:
