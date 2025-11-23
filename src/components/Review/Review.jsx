@@ -1,5 +1,6 @@
-import styles from "./Review.module.css"
 import { User } from "../User/user.jsx"
+
+import styles from "./Review.module.css"
 
 export function Review({ rating, text, userId }) {
 

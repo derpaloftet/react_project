@@ -42,6 +42,7 @@ Food Delivery App is built using **Next.js** with the **App Router** and **Redux
 - `useCallback`: Memoizes count logic in [useCount](./src/components/Dishes-counter/useCount.js)
 - `use`: Reads context values. Example: [LogInUser](./src/components/LogInUser/LogInUser.jsx)
 - `usePathname`: Reads the current URL’s pathname. Example: [TabLink](./src/components/TabLink/TabLink.jsx)
+- `useRef`: Manipulates the form's input field directly, avoids unnecessary re-renders in [ReviewForm](./src/components/ReviewForm/ReviewForm.jsx)
 - Custom Hook - [useCount](./src/components/Dishes-counter/useCount.js): Adds/removes dishes from the cart
 
 **Redux with Redux Toolkit**:
@@ -62,6 +63,12 @@ Food Delivery App is built using **Next.js** with the **App Router** and **Redux
 **Developer Tools**:
 - **ESLint**: Ensures clean, consistent code
 - **Prettier**: Handles code formatting
+
+**Deployment & CI/CD**:
+
+- Continuous Integration: Set up with CircleCI for automated testing and builds on every commit
+- Deployment: Automatically deployed to Netlify on successful builds, Render ???? 
+- Lighthouse CI (LHCI): runs automatically in the CI pipeline to audit web performance, accessibility, SEO, and best practices
 
 ## How to start locally
 Start the Next.js dev server:
