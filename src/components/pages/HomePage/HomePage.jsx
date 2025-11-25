@@ -7,7 +7,7 @@ export function HomePage() {
     <div className={ styles.root }>
       <h1 className={ styles.header }>Welcome to the Food Delivery App</h1>
       <div className={ styles.message }>
-        Check out our restaurants <Link href="/restaurants" >on this page</Link>
+        Check out our restaurants <Link href="/restaurants" className={ styles.cleanLink }>on this page</Link>
       </div>
     </div>
   )

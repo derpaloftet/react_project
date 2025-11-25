@@ -1,5 +1,4 @@
 .header {
-    background-color: #d5e3e8;
     display: flex;
     justify-content: space-between;
     height: 50px;
@@ -19,4 +18,12 @@
     font-weight: bold;
     color: #0357b5;
     font-family: 'Lora', serif;
+    text-decoration: none;
+}
+
+.light {
+    background-color: #d5e3e8;
+}
+.dark {
+    background-color: #273038;
 }

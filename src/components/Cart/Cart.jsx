@@ -20,7 +20,7 @@ export function Cart({ dishes }) {
   if (!items.length) {
     return (
       <div className={ styles.root }>
-        <div className={ styles.cart }>Cart:</div>
+        <div className={ styles.cart }>Cart</div>
         <div>You haven&#39;t added any items to your cart yet!</div>
       </div>
     )

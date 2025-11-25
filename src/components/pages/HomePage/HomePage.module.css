@@ -16,3 +16,8 @@
     color: #0357b5;
     font-weight: bold;
 }
+.cleanLink {
+    text-decoration: none;
+    color: #1e3a8a;
+    text-shadow: #475569 1px 1px 1px;
+}
