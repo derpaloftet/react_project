@@ -8,7 +8,7 @@ import styles from "./Layout.module.css"
 
 export function Layout({ children }) {
   return (
-    <div className={ styles.appLayout }>
+    <div className={ styles.appLayout } >
       <ProgressBar />
       <Header />
       <main className={ styles.main }>{ children }</main>
